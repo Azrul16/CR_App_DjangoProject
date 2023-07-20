@@ -1,11 +1,9 @@
-from django.shortcuts import render
-from django.views import View
-from django.http import HttpResponse
+from rest_framework import viewsets
 from .models import Data
+from .serializers import DataSerializer
 
-# Create your views here.
-class Another(View):
-    datas = Data.objects.all()
+class DataViewSet(viewsets.ModelViewSet):
+    queryset = Data.objects.all()
 
-    def get(self, request):
-        return HttpResponse('This is from Another view')
+    def get_serializer_class(self):
+        return DataSerializer
