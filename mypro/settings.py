@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mypro.wsgi.application'
+ASGI_APPLICATION = 'mypro.asgi.application'
 
 
 # Database
